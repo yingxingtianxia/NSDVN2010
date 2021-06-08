@@ -4,11 +4,11 @@
 '''
 import random
 
-items = ['剪刀','石头','布']
+items = ['剪刀', '石头', '布']
 computer = random.choice(items)
 person = input('请出拳[剪刀|石头|布]：')
 
-print('电脑出拳为：',computer,'你出拳为：', person)
+print('电脑出拳为：', computer, '你出拳为：', person)
 if computer == '剪刀':
     if person == '剪刀':
         print('平局')
