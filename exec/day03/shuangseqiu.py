@@ -8,8 +8,9 @@ red_ball = []
 
 while True:
     red = random.randint(1,33)
-    if red not in red_ball:
-        red_ball.append(red)
+    if red in red_ball:
+        continue
+    red_ball.append(red)
 
     if len(red_ball) == 6:
         blue_ball = random.randint(1,16)

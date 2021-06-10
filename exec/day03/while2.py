@@ -35,10 +35,26 @@ while True:
     # i = i + 1           #能否把自增长放在这？？？
 print(s)
 
+#python的while循环支持else语句
+i = 0
+s = 0
+while i <= 10:
+    s += i
+    i += 1
+else:
+    print(s)
 
+i = 0
+s = 0
+while True:
+    s += i
+    i += 1
+    if i == 10:
+        break
+else:
+    print(s)
 
-
-
+#写脚本思路   逻辑代码+功能代码     while>case>function
 
 
 
