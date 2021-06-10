@@ -14,6 +14,8 @@ prompt = '''请出拳
 while c_win < 2 and p_win < 2:
     computer = random.choice(items)
     pcho = int(input(prompt))
+    if pcho not in [0,1,2]:
+        continue
     person = items[pcho]
     print('电脑出拳为：%s,你出拳为：%s', (computer,person))
     if person == computer:
