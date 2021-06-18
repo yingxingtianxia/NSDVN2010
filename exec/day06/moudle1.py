@@ -70,3 +70,35 @@ mark@mark-PC:~$ ll /tmp/hosts
 
 
 
+################################3
+import subprocess
+subprocess.run()
+>>> subprocess.run(['ls', '-l', 'a.sh'])
+>>> subprocess.run('ls -l a.sh',shell=True)
+>>> s = subprocess.run('ls -l a.sh',shell=True, stdout=subprocess.PIPE,stderr=subprocess.PIPE)
+>>> s.args
+'ls -l a.sh'
+>>> s.returncode
+0
+>>> s.stdout
+b'-rw-r--r-- 1 mark mark 20 6\xe6\x9c\x88  17 22:21 a.sh\n'
+>>> s.stderr
+b''
+>>>
+
+
+
+
+>>> subprocess.getoutput('ls')
+'模板\na.sh\ncfg\ndata\nDesktop\nDocuments\nDownloads\nMusic\nPictures\nsensors\nSunloginRemote\nVideos'
+>>> s = subprocess.getoutput('ls')
+>>> s
+'模板\na.sh\ncfg\ndata\nDesktop\nDocuments\nDownloads\nMusic\nPictures\nsensors\nSunloginRemote\nVideos'
+>>> subprocess.getstatusoutput('ls')
+(0, '模板\na.sh\ncfg\ndata\nDesktop\nDocuments\nDownloads\nMusic\nPictures\nsensors\nSunloginRemote\nVideos')
+>>> s = subprocess.getstatusoutput('ls')
+>>> s[0]
+0
+>>> s[1]
+'模板\na.sh\ncfg\ndata\nDesktop\nDocuments\nDownloads\nMusic\nPictures\nsensors\nSunloginRemote\nVideos'
+>>>
