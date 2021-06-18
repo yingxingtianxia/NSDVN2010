@@ -48,3 +48,33 @@ def main():
 
 s = main()
 print('计算结果是：%s' % s)
+
+
+
+
+
+
+
+
+
+
+
+# x = int(sys.argv[1])
+# y = int(sys.argv[2])
+# adict = {0: jia, 1: jian, 2: cheng, 3: chu}
+# resoult = adict[int(input(prompt))](x,y)
+#
+# cmds = [jia,jian,cheng,chu]
+# 0
+# cmds[0] = jia
+# cmds[1] = jian
+#
+# cmds[int(input('prompt'))](x,y)
+
+
+
+
+
+
+
+
