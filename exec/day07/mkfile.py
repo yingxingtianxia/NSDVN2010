@@ -19,22 +19,22 @@ def get_fname():
             return fname
 
 
-def get_content():
-    content = []
+def get_context():
+    context = []
     while True:
         cont = input('请输入内容(end结束)：')
         if cont == 'end':
             break
-        content.append('%s\n' % cont)
-    return content
+        context.append('%s\n' % cont)
+    return context
 
 
-def wfile(fname, content):
+def wfile(fname, context):
     with open(fname, 'a+') as fobj:
-        fobj.writelines(content)
+        fobj.writelines(context)
 
 
 if __name__ == '__main__':
     fname = get_fname()
-    content = get_content()
-    wfile(fname, content)
+    context = get_context()
+    wfile(fname, context)
