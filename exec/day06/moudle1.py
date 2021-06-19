@@ -102,3 +102,26 @@
 # >>> s[1]
 # '模板\na.sh\ncfg\ndata\nDesktop\nDocuments\nDownloads\nMusic\nPictures\nsensors\nSunloginRemote\nVideos'
 # >>>
+
+
+
+
+import keyword
+>>> keyword.iskeyword('if')
+True
+>>> keyword.iskeyword('abc')
+False
+>>> keyword.kwlist
+['False', 'None', 'True', 'and', 'as', 'assert', 'async', 'await', 'break', 'class', 'continue', 'def', 'del', 'elif', 'else', 'except', 'finally', 'for', 'from', 'global', 'if', 'import', 'in', 'is', 'lambda', 'nonlocal', 'not', 'or', 'pass', 'raise', 'return', 'try', 'while', 'with', 'yield']
+>>>
+
+>>> type(print)
+<class 'builtin_function_or_method'>
+>>> print = 'abc'
+>>> print
+'abc'
+>>> print('a')
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'str' object is not callable
+>>>
