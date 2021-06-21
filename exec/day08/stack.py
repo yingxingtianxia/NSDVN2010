@@ -37,6 +37,7 @@ if __name__ == '__main__':
 2-->查询
 3-->退出
 请做出你的选择：'''
+    cmds = [push_it, pop_it, view_it]
     while True:
         choice = input(prompt)
         if choice not in '0123':
@@ -46,9 +47,10 @@ if __name__ == '__main__':
         if choice == 3:
             print('\n再见')
             break
-        if choice == 0:
-            push_it()
-        elif choice == 1:
-            pop_it()
-        elif choice == 2:
-            view_it()
+        # if choice == 0:
+        #     push_it()
+        # elif choice == 1:
+        #     pop_it()
+        # elif choice == 2:
+        #     view_it()
+        cmds[choice]()
