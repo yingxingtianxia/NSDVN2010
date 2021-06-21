@@ -19,6 +19,9 @@ Python1-day4-下
 		- isspace()		是否为空白字符
 		- isupper()		是否为大写字母
 		- islower()		是否为小写字母
+		- istitle()		是否为标题（首字母大写）
+		- starswith()	以xx开始
+		- endswith()	以xx结束
 	- 转换
 		- upper()		转换成大写
 		- lower()		转换成小写
@@ -28,10 +31,9 @@ Python1-day4-下
 	- 替换
 		- replace()
 	- 查找
-		- starswith()	以xx开始
-		- endswith()	以xx结束
 		- find()		查找字符返回索引
-		- index()		查找索引返回字符
+		- index()		查找字符返回索引
+			- 区别，不存在是find()返回-1，index()报TypeError
 	- 位置对齐
 		- zfill()		右对齐，左填充0
 		- rjust()		右对齐
@@ -42,7 +44,7 @@ Python1-day4-下
 		- rstrip()		移除结尾的指定字符
 		- lstrip()		移除开头的指定字符
 	- 拼接
-		- join()
+		- join()		将()里边的字符用s变量连接
 	- 分割
 		- split()		根据指定字符进行分割，返回列表
 	- 计数
