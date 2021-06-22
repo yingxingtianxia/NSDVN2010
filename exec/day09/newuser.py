@@ -16,6 +16,10 @@ for item in new_set:
 
 new_ip_set = set(new_ip_list)
 print(new_ip_set)
+print(len(new_ip_set))
+
+for ip in new_ip_set:
+    print(ip)
 
 f1.close()
 f2.close()
