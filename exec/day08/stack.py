@@ -11,8 +11,8 @@ stack = []
 
 def push_it():
     val = input('请输入需要压栈的元素：')
-    if val:
-        stack.append(val)
+    if val.strip(' '):
+        stack.append(val.strip(' '))
 
 
 def pop_it():
