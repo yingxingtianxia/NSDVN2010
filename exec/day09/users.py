@@ -8,6 +8,7 @@ import getpass
 
 users = {}
 
+
 def register():
     while True:
         username = input('请输入用户名：')
@@ -29,7 +30,6 @@ def register():
         else:
             print('用户名为空，请重新输入')
             continue
-
 
 
 def login():
@@ -60,17 +60,18 @@ def login():
             print('用户名为空，请重新输入')
             continue
 
+
 def main():
     prompt = '''####操作清单####
 0--->注册
 1--->登录
 2--->退出
 请选择:'''
-    cmds = {'0': register,'1': login}
+    cmds = {'0': register, '1': login}
     while True:
         choice = input(prompt)
         choice = choice.strip(' ')
-        if choice == '':                #用户直接拍了回车
+        if choice == '':  # 用户直接拍了回车
             continue
         if choice not in '012':
             print('非法选项，请重新输入')
@@ -82,6 +83,7 @@ def main():
         # elif int(choice) == 1:
         #     login()
         cmds[choice]()
+
 
 if __name__ == '__main__':
     main()
