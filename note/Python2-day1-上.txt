@@ -18,7 +18,7 @@ Python2-day01-上
 		
 2、datetime模块(重新封装了time模块，提供了更多接口和类)
 		- date类 datetime.date
-			- 静态方法和字段
+			- 静态方法和字段(类变量)
 				- date.max						最大日期
 				- date.min						最小日期
 				- date.resolution				date对象表示日期的最小三维
@@ -41,7 +41,7 @@ Python2-day01-上
 			- 方法和属性（针对time对象）t=datetime.time(10,23,25)
 				- .hour/.minute/.second/.microsecond	时分秒微秒
 				- tzinfo	时区
-				- replace()		用新的对象替换旧的对象
+				- replace()		生成一个新的时间对象
 				- isoformat()	如"xx:xx:xx"
 				- strftime(fmt)	格式化输出
 		
@@ -52,7 +52,7 @@ Python2-day01-上
 				- .utcnow()						当前utc时间的datetime对象#格林尼治时间
 				- .fromtimestamp(timestamp)		根据时间戳返回datetime对象
 				- .utcfromtimestamp(timestamp)  根据时间戳返回utc的datetime对象
-				- .combine(date,time)			根据date和time创建一个datetime对象
+				- .combine(date,time)			根据date和time的对象创建一个datetime对象
 				- .strptime(str,fmt)			将格式化字符串转换成datetime对象
 			- 方法和属性（针对datetime对象）dt=datetime.datetime.now()
 				- .year/.month/.day/.hour/.minute/.second/.microsecond/.tzinfo
@@ -66,7 +66,7 @@ Python2-day01-上
 				- .isocalendar()		返回(年，周，日)
 				- .isoformat()			
 				- .ctime()
-				- strftime(fmt)
+				- .strftime(fmt)
 		
 		- timedelta类，时间加减  用于天、小时、分钟、秒、毫秒，不能用于月
 			dt = datetime.datatime.now()
