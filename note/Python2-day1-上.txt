@@ -1,19 +1,20 @@
 Python2-day01-上
 1、time模块
+	- 时间元组（九元组）
 	- struct_time(tm_year=2021, tm_mon=6, tm_mday=23, tm_hour=9, tm_min=23, tm_sec=8, tm_wday=2, tm_yday=174, tm_isdst=0)
 					年				月		日			时			分			秒		星期几		年天	 	是否为dst
 	- 常用方法
-		- .sleep()			线程推迟运行的时间，单位是s
-		- .time()			获取当前时间戳
-		- .localtime()		将时间戳转换为当前时区的九元组，默认当前时间戳，可以指定
-		- .gmtime()			同localtime()方法，转换至0时区
+		- .sleep()					线程推迟运行的时间，单位是s
+		- .time(s)					获取当前时间戳
+		- .localtime(timestamp)		将时间戳转换为当前时区的九元组，默认当前时间戳，可以指定
+		- .gmtime(timestamp)		同localtime()方法，转换至0时区
 		
-		- .mktime()			九元组-->时间戳
-		- .asctime()		九元组-->易读时间
-		- .ctime()			时间戳-->易读时间
+		- .mktime(struct_time)		九元组-->时间戳
+		- .asctime(struct_time)		九元组-->易读时间
+		- .ctime(timestamp)			时间戳-->易读时间
 		
-		- .strftime(format,t)			九元组-->格式化时间
-		- .strptime(string,format)		格式化时间-->九元组	
+		- .strftime(format,struct_time)			九元组-->格式化时间
+		- .strptime(string,format)				格式化时间-->九元组	
 		
 2、datetime模块(重新封装了time模块，提供了更多接口和类)
 		- date类 datetime.date
