@@ -19,6 +19,10 @@ Python2-day1-下
 			assert 0 < age < 120, '年龄超过范围'   # 断言异常
 			print("%s is %d years old" % (name, age))
 			
+	- 总结
+		- assert自带判断功能
+		- raise多数用于判断体代码
+			
 2、os模块（文件系统相关）
 	- 常用方法
 		- .symlink()		创建连接

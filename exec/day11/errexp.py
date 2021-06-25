@@ -20,6 +20,9 @@ while True:
     except ZeroDivisionError:
         print('0不能作为被除数')
         continue
+    except Exception:
+        print('未知异常')
+        continue
     else:
         print(res)
     finally:
