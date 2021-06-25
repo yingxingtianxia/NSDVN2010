@@ -32,10 +32,10 @@ Python2-day1-下
 		- .getcwd()			获取当前的工作目录
 		- .mkdir()			创建目录
 		- .mknod()			创建文件，适用于Linux
-		- .rmdir()			删除目录
+		- .rmdir()			删除目录	目录不为空时无法删除
 		- .remove()			删除文件
-		- .chmod()			修改权限
-		- .chown()			修改归属
+		- .chmod(八进制)			修改权限
+		- .chown(file,uid,gid)			修改归属
 		- .chdir()			切换工作目录
 		- .getlogin()		获取当前登录用户
 		- .system()			调用系统命令
@@ -52,6 +52,7 @@ Python2-day1-下
 			- os.path.join()		拼接
 			- os.path.realpath()	获取链接的源路径
 			- os.path.split()		分离目录和文件名
+			- os.path.ismount()		判断是否为挂载点
 		
 
 3、pickle模块
@@ -60,6 +61,7 @@ Python2-day1-下
 		- 常规方法open()将数据写入文件时，只能把字符串对象写入，其他数据类型如list，tuple、directory写入就会报错
 		- pickle模块可以向文件存储任何Python对象，并且支持以原格式取出数据
 		- 数据经过pickle模块处理后，可读性差，人类一般不可读
+		- 节省空间
 		
 	- 协议
 		- 该pickle模块实现了用于序列化和反序列化Python对象结构的二进制协议
@@ -72,7 +74,7 @@ Python2-day1-下
 		- .dumps(obj)		对象-->字节流	
 		- .loads(bytes)		字节流-->对象
 		- .dump(obj,fobj)	对象-->网络/文件
-		- .load(fobj)	网络/文件-->对象
+		- .load(fobj)		网络/文件-->对象
 		
 	- 账本案例
 	
