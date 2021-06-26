@@ -17,7 +17,7 @@ def jisuan():
     if method == '+':
         r = x + y
     elif method == '-':
-        r = x - y
+        r = x // y
 
     return ((x,method,y),r)
 
@@ -32,7 +32,7 @@ def main():
             print('计算正确')
             break
         if i == 3:
-            print('正确结果是：'+r[1])
+            print('正确结果是%s' % r[1])
             break
         i += 1
 
