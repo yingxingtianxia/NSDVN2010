@@ -22,7 +22,29 @@ Python2-day2-下
 	- 快排案例
 	
 2、生成器
-	- 
+	- 概念
+		- 从语法讲，生成器是一个带yield语句的函数
+		- 一个函数或者子程序只能返回一次，但生成器能暂停执行并返回一个中间结果
+		- yield语句返回一个值给调用者并暂停执行
+		- 用next()方法持续调用
+	- 生成器演示
+		- 原生生成器
+			- def my_gen():
+				yield 1
+				yield 2
+				yield 3
+			  mg = mygen()
+			  - next()调用
+			  - for遍历
+		- iter()函数
+			- a = iter(range(10))
+			  a.__next__()
+		- 生成器表达式
+			- nums1 = [randint(1,100) for i in range(5)]
+			- nums2 = (randint(1,100) for i in range(5))
+	- 生成器案例
+			
+		
 
 3、模块详解
 	- 概念
@@ -60,3 +82,9 @@ Python2-day2-下
 			- digest()		bytes类型消息摘要
 			- hexdigest()	16进制消息摘要
 			- update(bytes)		向对象添加消息
+			
+extras：
+	- 闭包
+		- 函数内部调用外部变量的行为
+	- 装饰器
+		- 函数内部调用外部函数
