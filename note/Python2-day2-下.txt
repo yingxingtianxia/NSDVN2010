@@ -81,7 +81,7 @@ Python2-day2-下
 			- sha256()
 			- sha512()
 		- 对象操作方法
-			- digest_size	摘要位长
+			- digest_size	消息摘要位长
 			- digest()		bytes类型消息摘要
 			- hexdigest()	16进制消息摘要
 			- update(bytes)		向对象添加消息

@@ -76,7 +76,7 @@ def incr_back(src, dst, md5file):
 
     # 更新本日md5file的值，覆盖旧的md5file
     with open(md5file, 'wb') as fobj:
-        pickle.dump(md5_dic)
+        pickle.dump(md5_dic,fobj)
 
 
 if __name__ == '__main__':
