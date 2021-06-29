@@ -61,15 +61,15 @@ Python2-day2-下
 		- 系统预定义sys.path
 		
 	- tarfile模块
-		- 通过对象来处理文件
+		- 通过对象来处理tar文件
 			- tar = tarfile.open(tarname,mode)
 		- 常用方法
 			- 创建
 				- add()		向tar包内增加文件
 			- 解包
-				- extract() 	解压单个文件
-				- extractall()	解压所有文件
-				- getmembers()	获取tar包没所有文件名列表
+				- extract(filename) 	解压单个文件
+				- extractall()			解压所有文件
+				- getmembers()			获取tar包没所有文件名列表
 			- 关闭
 				- close()
 				
