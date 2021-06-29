@@ -70,6 +70,8 @@ def incr_back(src, dst, md5file):
     # 查找发生变化（md5值不一致）的文件，将其放入增量备份的tar包
     tar = tarfile.open(fname, 'w:gz')
     for key in md5_dic:
+        if key not in old_md5_values:
+            tar.add(key)
         if md5_dic[key] != old_md5_values[key]:
             tar.add(key)
     tar.close()
