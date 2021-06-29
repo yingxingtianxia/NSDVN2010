@@ -87,3 +87,17 @@ if __name__ == '__main__':
         full_back(src,dst,md5file)
     else:
         incr_back(src,dst,md5file)
+
+
+'''
+测试代码过程：
+    1、创建出/tmp/demo/和/tmp/backup目录
+    2、在/tmp/demo/目录下创建几个文件或目录待用
+    3、修改代码主程序部分 if time.localtime()[6] != 0:
+        目的，当前日期可能是非周一，所以在不是周一的情况下先执行一次完整备份
+    4、执行一次程序，查看/tmp/backup/目录是否有一个完整备份的tar包和一个md5file
+    5、修改/tmp/demo下的某个文件
+    6、修改代码if time.localtime()[6] == 0:
+        目的，正常逻辑下非周一执行代码进行增量备份
+    7、查看/tmp/backup/目录下是否有一个增量备份的tar包
+'''
