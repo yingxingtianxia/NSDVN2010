@@ -1,0 +1,6 @@
+Devops-day2-上
+1、邮件编程
+
+2、Json
+
+3、requests基础
