@@ -13,10 +13,11 @@ def count_patt(fname,patt):
             m = spatt.match(line)
             if m:
                 key = m.group()
-                if key not in patt_dic:
-                    patt_dic[key] = 1
-                else:
-                    patt_dic[key] += 1
+                patt_dic[key] = patt_dic.get(key,0) + 1
+                # if key not in patt_dic:
+                #     patt_dic[key] = 1
+                # else:
+                #     patt_dic[key] += 1
     return patt_dic
 
 if __name__ == '__main__':
