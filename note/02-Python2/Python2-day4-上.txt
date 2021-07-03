@@ -1,4 +1,4 @@
-Python2-day3-上
+Python2-day4-上
 1、Python模块安装
 	- 模块
 		- 标准库模块：os/sys/time
@@ -29,6 +29,10 @@ Python2-day3-上
 	- db_script.zip创建数据库
 	
 3、PyMySQL使用
+	- sql命令行补全工具：
+		- pip install mycli
+		- 用mycli替换mysql命令
+		
 	- pymysql模块套路
 		#!/usr/bin/env python3
 		import pymysql
