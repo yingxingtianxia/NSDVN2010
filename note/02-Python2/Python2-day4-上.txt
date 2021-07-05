@@ -49,7 +49,7 @@ Python2-day4-上
 		sql = 'select user,host from mysql.user;'   #设置sql语句
 		cursor.execute(sql)                         #执行sql语句
 		res = cursor.fetchall()                     #结果处理
-		conn.commit()                             #增删改需要提交
+		conn.commit()                               #增删改需要提交
 		cursor.close()                              #关闭游标
 		conn.close()                                #关闭连接
 

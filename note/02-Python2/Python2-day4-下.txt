@@ -6,16 +6,18 @@ Python2-day4-下
 		- SQLAlchemy“采用简单的Python语言，为高效和高性能的数据库访问设计，实现了完整的企业级持久模型”
 	- 理念
 		- SQL数据库的量级和性能重要于对象集合；而对象集合的抽象又重要于表和行
+			- 对象-->实例-->表记录
+			- 对象集合的抽象-->类-->字段
 	- 目标
 		- 提供能兼容众多数据库(如：SQLite、MySQL、Postgresql、Oracle、MS-SQL、SQLServer)的企业级持久性模型
 	- ORM:
 		- 一种对象关系型映射模型(Object Relational Mapper)
-		- 展现了一种将用户定义的Python的类映射到数据库中表的方法
+		- 展现了一种将用户定义的Python的类映射到数据库中表的方法    --> 不用懂sql语句，用python类去组装
 		- 通过实例化类，用对象创建表和操作表中的数据
 		- 从sql语句中抽离出来，用Python的语法实现操作数据库（可以不会sql语句）
 	- 可以理解为SQLAlchemy是用户和数据库的中介，进行实例和sql操作的转换
 	- 性能
-		- 
+		- 比原生sql语句要慢，因为多了转换的过程
 	- 架构
 		- SQLAlchemy ORM：和用户进行对接，用户通过定义class，可以对数据库进行操作；
 		- SQLAlchemy Core:

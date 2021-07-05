@@ -1,4 +1,7 @@
 #!/usr/bin/env python
+'''
+修改表记录
+'''
 import pyconn
 
 conn = pyconn.pyconn()
