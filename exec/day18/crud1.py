@@ -3,7 +3,7 @@
 sqlalchemy实现mysql的crud（增删改查）
     操作departments表
 '''
-from dbconn import Session,DepartMents,Employees,Salary
+from dbconn import Session,DepartMents
 #采用Session类实例化一个会话连接session，通过这个会话操作表记录
 session = Session()
 
