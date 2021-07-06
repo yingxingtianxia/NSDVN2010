@@ -29,7 +29,7 @@ Python2-day4-下
 	- 安装
 		- pip install sqlalchemy
 	- 创建engine连接数据库，相当于调用pymysql的connect()方法
-	- 实例化session对象创建会话(可直接绑定engine，也可以先创建空会话然后绑定engine)
+	- 实例化session对象创建会话-->创建连接池(可直接绑定engine，也可以先创建空会话然后绑定engine)
 	- 表结构(二维数组) --> Python的类的实例化对象   (1,'zhangsan') --> User(1,'zhangsan')
 	- 声明映射 
 		- declarative_base() 创建了一个 BaseModel 类，这个类的子类可以自动与一个表关联
@@ -54,6 +54,7 @@ Python2-day4-下
 			- 不打开任何连接
 			- 使用时从engine维护的连接池中获取一个连接
 			- 当前连接的所有事物被commit或者会话对象关闭时，连接结束
+	- 添加
 		- 单个新对象
 			- .add()
 		- 批量新对象
@@ -68,6 +69,8 @@ Python2-day4-下
 		- 结果过滤
 			- .filter(classname.attr condition)			#where name=='zs'
 			- 可以多重使用
+			- 模糊查询 '%.cn'
+			- in条件    ~取反
 		- 多表查询
 			- .join()
 		- 操作结果(对象)
