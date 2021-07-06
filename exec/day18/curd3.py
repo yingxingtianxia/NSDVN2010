@@ -2,7 +2,7 @@
 '''
 查询数据
 '''
-from dbconn import Session,DepartMents,Employees
+from dbconn import Session,DepartMents,Employees,Salary
 
 session = Session()
 #查询一个表的所有表记录
@@ -38,19 +38,27 @@ session = Session()
 # for item in res6:
 #     print(item.emp_name,item.email)
 
-#in条件查找
-res7 = session.query(Employees).filter(Employees.emp_name.in_(
-    ['后羿','鲁班','吕布']
-))
-for item in res7:
-    print(item.emp_name)
-#对列表内的值进行取反
-res8 = session.query(Employees).filter(~Employees.emp_name.in_(
-    ['后羿','鲁班','吕布']
-))
-for item in res8:
-    print(item.emp_name)
-print(res8.all())       #取出每条符合条件的表记录对象
+# #in条件查找
+# res7 = session.query(Employees).filter(Employees.emp_name.in_(
+#     ['后羿','鲁班','吕布']
+# ))
+# for item in res7:
+#     print(item.emp_name)
+# #对列表内的值进行取反
+# res8 = session.query(Employees).filter(~Employees.emp_name.in_(
+#     ['后羿','鲁班','吕布']
+# ))
+# for item in res8:
+#     print(item.emp_name)
+# print(res8.all())       #取出每条符合条件的表记录对象
+# print(res8.first())
+
+#多表查询
+res9 = session.query(Employees.emp_name,DepartMents.dep_name).join(DepartMents)
+# for data in res9:
+#     print(data)
+for name,dname in res9:
+    print('%s在%s' % (name,dname))
 
 session.commit()        #关于查询的语句，写不写都行
 session.close()
