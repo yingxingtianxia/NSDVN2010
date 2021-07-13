@@ -17,11 +17,11 @@ Devops-day2-上
 	- 是一种数据格式，不是语言
 	- 基本上所有语言通用的数据交换格式
 	
-	- dumps() 字符->json  	编码
-	- loads() json->字符	解码
+	- dumps() Python数据类型->json(字符串)  	编码
+	- loads() json(字符串)->Python数据类型		解码
 	
 	- 天气网
-		- [x] 实况天气获取： http://www.weather.com.cn/data/sk/城市代码.html
+		- [x] 实况天气获取：http://www.weather.com.cn/data/sk/城市代码.html
 		- [x] 城市信息获取：http://www.weather.com.cn/data/cityinfo/城市代码.html
 		- [x] 详细指数获取：http://www.weather.com.cn/data/zs/城市代码.html
 
