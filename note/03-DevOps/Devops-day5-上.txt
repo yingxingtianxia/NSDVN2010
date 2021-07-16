@@ -1,0 +1,6 @@
+DevOps-day5-上
+1、CI/CD概述
+
+2、Jenkins配置
+
+3、准备Git仓库
