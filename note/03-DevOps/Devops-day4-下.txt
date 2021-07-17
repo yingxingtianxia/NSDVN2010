@@ -1,6 +1,90 @@
 DevOps-day04-下
 1、git服务器搭建
-
+	- 概述
+		- 乌克兰的程序员开发
+		- 使用Ruby语言并用go做了一些补充
+		- 使用git管理代码并且附加了web服务
+		- 用于仓库管理系统的开源项目
+		- 社区版完全免费
+		- 可以建立私有仓库且无上限
+		- 参与人数没限制且可以对成员权限进行控制
+	- 由于搭建复杂，所以用docker容器运行gitlab
+		- gitlab_zh.tar   中文版
+		- 自行安装docker
+		- 修改宿主机的sshd服务端口，防止跟容器冲突
+		- docker run -d --name gitlab --hostname gitlab\
+          -p 22:22 -p 80:80 -p 443:443 \
+		  --restart always \
+		  -v /srv/gitlab/config:/etc/gitlab/\
+		  -v /srv/gitlab/logs:/var/log/gitlab/\
+		  -v /srv/gitlab/data:/var/opt/gitlab/\  gitlab_zh:latest
+	- 默认用户root，修改密码后登陆
+	- gitlab基础
+		- 群组group：使用群组管理项目和人员是比较好的方式
+		- 项目project：存储代码的地方，包含问题列表、维基文档和其他一些gitlab功能
+		- 成员member：添加团队成员或者其他人员到gitlab
 2、使用gitlab
+	- 用户管理
+		- 新建用户
+		- 加入群组
+	- 代码管理
+		- 关联方式创建完项目给出提示
+		- 本地仓库推送
+			- git remote add origin http://gitlab_ip/devops/myproject.git
+			- git push -u origin --all   推送所有分支
+			- git push -u origin --tags	 推送所有标签
+		- 更新本地代码
+			- git pull
+		- 免密登录
+			- ssh的方式
+			- 拷贝本地公钥到用户公钥
+			- git remote rename origin old-origin
+			- git remote add origin git@gitlab_ip:/devops/myproject.git
+			- git push -u origin --all
+			
 
 3、远程分支管理
+	- 远程仓库
+		- 托管在因特网或者其他网络中的项目版本库
+		- 每个用户可以有多个远程仓库，每个仓库的权限不同
+		- 与他人协作及管理的远程仓库可以根据需要推送或拉取数据
+		- 操作
+			- 添加远程仓库
+			- 移除无效的远程仓库
+			- 管理不同分支
+			- 定义是否跟踪
+		- 查看远程仓库
+			- git remote
+			- git remote -v
+			- git remote show <canme>   详细信息
+		- 添加远程仓库
+			- git remote add <shortname> url
+		- 重命名远程仓库
+			- git remote rename oldname newname
+		- 移除远程仓库
+			- git remote remove
+			- git remote rm
+	- 远程分支
+		- 远程引用是对远程仓库的引用（指针），包括分支，标签等
+		- 已通过git ls-remote 获取远程引用的完整列表
+		- 远程跟踪分支是远程分支状态的引用
+		- 命名
+			remote/branch
+		- 推送分支
+			- git push remote brance
+		- 跟踪分支
+			- 从一个远程跟踪分支检出一个本地分支会自动创建“跟踪分支”
+			- 它跟踪的分支叫做“上游分支”
+			- 跟踪分支是与远程分支有直接关系的本地分支
+			- 通常是master分支跟踪origin/master分支
+		- 拉取数据
+			- git fetch
+				- 从服务器上抓取本地没有的数据，不修改工作目录中的内容
+				- 由用户自己合并
+			- git pull
+				- 查找当前分支所跟踪的服务器分支
+				- 从服务器上拉取数据然后尝试合并入那个远程分支
+				- 可以理解为pull是fetch+merge
+		- 删除远程分支
+			- git push origin --delete branch
+			
