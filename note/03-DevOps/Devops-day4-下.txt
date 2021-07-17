@@ -227,7 +227,9 @@ ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCvuRWhFp0N0sEjeEc2KkdNMj5X7qgGGy0McGHmdmNR
 [wdn@node02 myproject]$ git add .
 [wdn@node02 myproject]$ git commit -m 'modify readme'
 [wdn@node02 myproject]$ git push
-
+#其他用户同步gitlab数据
+[zs@node02 myproject]$ git pull
+[ls@node02 myproject]$ git pull
 
 
 
