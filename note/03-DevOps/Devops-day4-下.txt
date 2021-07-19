@@ -231,6 +231,92 @@ ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCvuRWhFp0N0sEjeEc2KkdNMj5X7qgGGy0McGHmdmNR
 [zs@node02 myproject]$ git pull
 [ls@node02 myproject]$ git pull
 
+#更新张三李四用户的origin
+[zs@node02 myproject]$ git remote -v
+[zs@node02 myproject]$ git remote remove origin 
+[zs@node02 myproject]$ git remote add origin git@192.168.1.1:devops/myproject.git
+[zs@node02 myproject]$ git remote -v
+[zs@node02 myproject]$ git branch --set-upstream-to=origin/master 
+Branch master set up to track remote branch master from origin.
+[zs@node02 myproject]$ git pull
+
+[ls@node02 myproject]$ git remote -v
+[ls@node02 myproject]$ git remote remove origin 
+[ls@node02 myproject]$ git remote add origin git@192.168.1.1:devops/myproject.git
+[ls@node02 myproject]$ git remote -v
+#关联上游分支
+[ls@node02 myproject]$ git branch --set-upstream-to=origin/master 
+Branch master set up to track remote branch master from origin.
+[ls@node02 myproject]$ git pull
+
+#测试ssh免密，同步代码仓库
+[wdn@node02 ~]$ cd myproject/
+[wdn@node02 myproject]$ vim README.md 
+[wdn@node02 myproject]$ git add .
+[wdn@node02 myproject]$ git commit -m "update tasks"
+[wdn@node02 myproject]$ git push
+
+[zs@node02 myproject]$ git pull
+[ls@node02 myproject]$ git pull
+
+#协同工作流程
+[zs@node02 myproject]$ vim README.md 
+[zs@node02 myproject]$ git add .
+[zs@node02 myproject]$ git commit -m "zs working"
+[master dec11f4] zs working
+ 1 file changed, 1 insertion(+)
+#此时开发者用户张三，不允许向orgin/mastser分支推送代码
+[zs@node02 myproject]$ git push
+Counting objects: 5, done.
+Delta compression using up to 2 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 361 bytes | 0 bytes/s, done.
+Total 3 (delta 1), reused 0 (delta 0)
+remote: GitLab: You are not allowed to push code to protected branches on this project.
+To git@192.168.1.1:devops/myproject.git
+ ! [remote rejected] master -> master (pre-receive hook declined)
+error: failed to push some refs to 'git@192.168.1.1:devops/myproject.git'
+[zs@node02 myproject]$ 
+
+#zs工作过程
+[zs@node02 myproject]$ git branch 
+[zs@node02 myproject]$ git branch zsmaster
+[zs@node02 myproject]$ git checkout zsmaster 
+[zs@node02 myproject]$ git branch 
+[zs@node02 myproject]$ vim README.md 
+[zs@node02 myproject]$ git add .
+[zs@node02 myproject]$ git commit -m "zs init"
+[zs@node02 myproject]$ git push origin zsmaster 
+[zs@node02 myproject]$ vim index_1.html 
+[zs@node02 myproject]$ git add .
+[zs@node02 myproject]$ git commit -m "zs finish"
+[zs@node02 myproject]$ git push --set-upstream origin zsmaster 
+[zs@node02 myproject]$ git push
+#wdn工作过程
+[wdn@node02 myproject]$ git branch 
+[wdn@node02 myproject]$ git checkout -b zsbr
+[wdn@node02 myproject]$ git pull origin zsmaster
+[wdn@node02 myproject]$ git branch 
+[wdn@node02 myproject]$ cat index_1.html 
+[wdn@node02 myproject]$ git checkout master
+[wdn@node02 myproject]$ git merge zsbr 
+[wdn@node02 myproject]$ git status
+[wdn@node02 myproject]$ git push
+[wdn@node02 myproject]$ git push --delete origin zsmaster
+#zs代码通过后清理本地分支
+[zs@node02 myproject]$ git branch 
+  master
+* zsmaster
+[zs@node02 myproject]$ git checkout 
+[zs@node02 myproject]$ git checkout master 
+[zs@node02 myproject]$ git merge zsmaster 
+[zs@node02 myproject]$ git branch -d zsmaster 
+
+
+
+
+
+
 
 
 
