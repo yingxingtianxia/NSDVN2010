@@ -312,6 +312,50 @@ error: failed to push some refs to 'git@192.168.1.1:devops/myproject.git'
 [zs@node02 myproject]$ git merge zsmaster 
 [zs@node02 myproject]$ git branch -d zsmaster 
 
+#ls用户操作
+[ls@node02 myproject]$ git branch 
+[ls@node02 myproject]$ git branch lsmaster
+[ls@node02 myproject]$ git checkout lsmaster 
+[ls@node02 myproject]$ vim README.md 
+[ls@node02 myproject]$ git add .
+[ls@node02 myproject]$ git commit -m "ls init"
+[ls@node02 myproject]$ vim index_2.html 
+[ls@node02 myproject]$ git add .
+[ls@node02 myproject]$ git commit -m "ls finish"
+[ls@node02 myproject]$ git push origin lsmaster
+[ls@node02 myproject]$ vim index_2.html 
+[ls@node02 myproject]$ git add .
+[ls@node02 myproject]$ git commit -m "ls finishd"
+[ls@node02 myproject]$ git push --set-upstream origin lsmaster 
+
+#wdn用户操作
+[wdn@node02 myproject]$ git checkout -b lsmaster
+[wdn@node02 myproject]$ git branch 
+[wdn@node02 myproject]$ git pull origin lsmaster
+[wdn@node02 myproject]$ cat index_2.html
+#手工解决冲突
+[wdn@node02 myproject]$ git status
+[wdn@node02 myproject]$ git add .
+[wdn@node02 myproject]$ git commit -m "merge"
+[wdn@node02 myproject]$ git checkout master
+[wdn@node02 myproject]$ git branch 
+[wdn@node02 myproject]$ git merge lsmaster 
+[wdn@node02 myproject]$ git push
+[wdn@node02 myproject]$ git push --delete origin lsmaster 
+[wdn@node02 myproject]$ git branch 
+[wdn@node02 myproject]$ git branch -d lsmaster 
+[wdn@node02 myproject]$ git branch -d zsbr 
+
+#李四用户清理本地分支
+[ls@node02 myproject]$ git status
+[ls@node02 myproject]$ git checkout master 
+[ls@node02 myproject]$ git merge lsmaster 
+[ls@node02 myproject]$ git branch -d lsmaster 
+
+#更新节点代码，至张三李四本地master分支同步origin/master分支
+[zs@node02 myproject]$ git pull
+[ls@node02 myproject]$ git pull
+
 
 
 
