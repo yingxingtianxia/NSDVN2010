@@ -72,7 +72,7 @@ DevOps-day04-下
 		- 命名
 			remote/branch
 		- 推送分支
-			- git push remote brance
+			- git push remote branch
 		- 跟踪分支
 			- 从一个远程跟踪分支检出一个本地分支会自动创建“跟踪分支”
 			- 它跟踪的分支叫做“上游分支”
