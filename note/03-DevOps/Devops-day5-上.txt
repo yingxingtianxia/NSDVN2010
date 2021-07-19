@@ -13,6 +13,10 @@ DevOps-day5-上
 		- CI服务器进行单元和集成测试，存储测试结果
 		- 向开发团队发送构建通知
 	- Jenkins
+		- 官网
+			- https://www.jenkins.io/zh/
+			- https://www.jenkins.io/zh/doc/book/  #说明文档
+			- https://mirror.tuna.tsinghua.edu.cn/jenkins/redhat/
 		- 由java编写
 		- 用于构建和测试项目
 		- 功能是监视重复工作的执行情况
@@ -51,3 +55,49 @@ DevOps-day5-上
 		- 初始化
 		- 关联本地仓库
 	
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+#初始化本地代码仓库
+[wdn@node02 ~]$ git init mysite
+Initialized empty Git repository in /home/wdn/mysite/.git/
+#制作1.0版本并打tag
+[wdn@node02 ~]$ cd mysite/
+[wdn@node02 mysite]$ vim index.html
+[wdn@node02 mysite]$ vim README.md
+[wdn@node02 mysite]$ git add .
+[wdn@node02 mysite]$ git commit -m "v1.0"
+[master (root-commit) b8bef74] v1.0
+ 2 files changed, 4 insertions(+)
+ create mode 100644 README.md
+ create mode 100644 index.html
+[wdn@node02 mysite]$ git tag 1.0
+#制作2.0版本并打tag
+[wdn@node02 mysite]$ vim index.html 
+[wdn@node02 mysite]$ git add .
+[wdn@node02 mysite]$ git commit -m "v2.0"
+[master 19ca91e] v2.0
+ 1 file changed, 1 insertion(+)
+[wdn@node02 mysite]$ git tag 2.0
+[wdn@node02 mysite]$ 
+[wdn@node02 mysite]$ git status
+# On branch master
+nothing to commit, working directory clean
+[wdn@node02 mysite]$ git tag 
+1.0
+2.0
+[wdn@node02 mysite]$ git log --oneline 
+19ca91e v2.0
+b8bef74 v1.0
+[wdn@node02 mysite]$
+#制作远程代码仓库
+
+#关联本地仓库和远程仓库
+[wdn@node02 mysite]$ git remote
+[wdn@node02 mysite]$ git remote add origin git@192.168.1.1:mysitedev/mysite.git
+[wdn@node02 mysite]$ git remote -v
+[wdn@node02 mysite]$ git push -u origin --all
+[wdn@node02 mysite]$ git push -u origin --tags 
+#测试wdn免密
+[wdn@node02 mysite]$ vim README.md 
+[wdn@node02 mysite]$ git add .
+[wdn@node02 mysite]$ git commit -m "init remote and local"
+[wdn@node02 mysite]$ git push
