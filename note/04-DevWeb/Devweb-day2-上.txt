@@ -77,6 +77,20 @@ DevWeb-day2-上
 		- 见图解
 	
 3、常用样式属性
+	- 背景属性
+		- background-color
+		- background-image
+	- 字体属性
+		- font-family
+		- font-size
+		- font-weight
+		- font-style
+		- font-variant
+	- 控制文本格式
+		- color
+		- text-align
+		- text-decoration
+		- line-height
 
 
 
