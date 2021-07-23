@@ -1,6 +1,54 @@
 DevWeb-day3-上
 1、Django概述
-
+	- Python后端开发，将Python用于网站开发
+		- 框架 -- 写好的基石
+			- Django
+			- Flask
+			- Tornado
+	- Django
+		- 开放源代码的web应用框架
+		- Python编写
+		- 最初用于劳伦斯旗下的新闻
+		- 2005年7月在BSD许可证下发布
+		- OpenStack的web页面就是用Django写的
+	- 核心组件
+		- 用于创建模型的对象关系映射（orm）
+		- 为最终用户设计的完美的管理界面
+		- 一流的URL设计
+		- 设计者友好的模板语言
+		- 缓存系统
+	- MTV模型
+		- 解析
+			- M：负责业务对象和数据库的关系映射
+			- T：把页面展示给用户
+			- V：负责业务逻辑，并调用M和T
+		- 响应模式
+			- 见图解
+	- 安装
+		- pip install django=2.2.12
 2、管理项目
-
+	- 创建方式
+		- pycharm专业版创建
+		- django-admin命令
+			- django-admin startproject projectname
+	- 项目结构分析
+		- projectname
+				|- manager.py				#项目管理脚本
+				|- mysite					#项目配置目录
+				|		|- __init__.py		#初始化文件
+				|		|- settings.py		#设置文件
+				|		|- urls.py			#路由映射文件
+				|		|- wsgi.py			#发布Django的配置文件
+				|- templates				#模板文件目录
+				
 3、管理应用
+
+
+
+
+
+
+
+
+
+
