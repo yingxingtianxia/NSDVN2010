@@ -1,6 +1,91 @@
 DevWeb-day4-上
 1、使用Python shell
+	- 进入交互命令行
+		- python mangaer.py shell
+		- python
+		- 区别在于由manager.py文件设置了DJANGO_SETTINGS_MODULE环境变量
+	- 导入models
+		from polls.models import Question,Choice
+		from django.utils import timezone
+	- 创建数据
+		- 不带外键的表记录
+			- M1: 
+				- q1 = Question(question_text='吃啥', pub_date=timezone())
+				- q1.save()
+			- M2:
+				- res1 = Question.objects.get_or_create(question_text='喝啥',pub_date=timezone())
+				- res是元组，（实例对象，执行是否成功）
+				- q2 = res1[0]
+		- 带外键的表记录
+			- M3：
+				- c1 = q2.choice_set.get_or_create(choice_text='北京')[0]
+	- 修改数据：
+		- q2.question_text = q2.question_text.replace('a','b')
+		- q2.save()
+	- 删除数据：
+		- q1.delete()
+		- 不需要执行q1.save(),delelte方法直接删除了数据，但是数据仍保存在内存中，一旦save又回写到数据
 
 2、操作数据
+	- 查询数据
+		- 查询所有数据、无序
+			- Question.objects.all()
+		- 查询所有数据、排序
+			- Question.objects.order_by('字段')
+			- 字段前加-表示反向排序
+		- 查询一条数据
+			- Question.objects.get('条件')
+			- 返回非一条结果都抛出异常
+		- 按条件查找、可以返回0条或多条
+			- Question.objects.filter(字段__条件=值)
+			- 样例
+				- filter(id__exact=1)	=1
+				- filter(id__gt=1)		>1
+				- filter(id__gte=1)		>=1
+				- filter(id__lt=1)		<1
+				- filter(id__lte=1)		<=1
+				- exclude(id__exact=1)	!=1
+				- filter(question_text__contains('xx')) 	包含xx
+				- filter(question_text__startwith('xx'))	以xx开头
+	- 修改投票首页文件
+		- 修改views.py	获取所有的问题
+		- 修改index.html  展示所有的问题
 
 3、模板语法
+	- 一个原则
+		- 前后端分离
+		- 分别修改前后端代码不互相影响
+	- 位置
+		- projectname/templates
+	- 语法
+		- {{ variable }} 	变量
+		- {% %}				标签、for、if
+		- {}				之外的任何字符都是html字符串
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

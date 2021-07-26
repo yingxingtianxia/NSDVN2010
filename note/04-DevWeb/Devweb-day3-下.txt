@@ -28,9 +28,27 @@ DevWeb-day3-下
 		- 通过python manager.py makemigrations自动生成映射关系
 		- 通过python manager.py migrate生成数据库
 	- on delete cascade 级联删除，删除主表的数据的时候外键表的数据同步删除
-	
-
 3、数据库管理
+	- 命令规则
+		- 表名
+			- 全部采用小写字母
+			- 应用名_类名
+		- 字段名
+			- 类变量
+			- 外键字段是相应类变量+_id
+		- 更改字段名
+			- 先修改models.py里边的代码
+			- 重新执行python manager.py makemigrations
+			- 再执行python manager.py migrate
+	- 注册模型
+		- 修改app/admin.py
+			- 从models.py导入数据库类
+			- 用admin.site.register()注册
+			- 后台默认显示为类对象（object）
+		- 重写models模型
+			- 用__str__魔法方法重写返回值
+			- return '%s' self.xxx_text
+		- 刷新后台显示
 
 
 
