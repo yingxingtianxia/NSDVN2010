@@ -7,7 +7,7 @@ DevWeb-day3-上
 		- python -m venv webenv
 		- 如果报错，pip install --upgrade pip
 	- 配置pycharm，采用新的虚拟环境
-		
+	- 准备一台数据库服务器存储数据用
 
 1、Django概述
 	- Python后端开发，将Python用于网站开发
