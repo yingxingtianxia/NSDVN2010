@@ -35,7 +35,7 @@ DevWeb-day3-上
 		- 响应模式
 			- 见图解
 	- 安装
-		- pip install django=2.2.12
+		- pip install django==2.2.12
 2、管理项目
 	- 创建方式
 		- pycharm专业版创建
