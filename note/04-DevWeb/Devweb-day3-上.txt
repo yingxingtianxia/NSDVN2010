@@ -1,4 +1,14 @@
 DevWeb-day3-上
+
+环境准备：
+	- 环境
+		- 创建新的目录day33-36
+		- 找到合适的目录新建虚拟环境
+		- python -m venv webenv
+		- 如果报错，pip install --upgrade pip
+	- 配置pycharm，采用新的虚拟环境
+		
+
 1、Django概述
 	- Python后端开发，将Python用于网站开发
 		- 框架 -- 写好的基石
